@@ -1,0 +1,13 @@
+.subtract-btn,
+.add-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.quantity-text {
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
