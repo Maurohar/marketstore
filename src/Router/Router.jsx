@@ -1,4 +1,4 @@
-import NavBar from "../NavBar/NavBar";
+import NavBar from "../componentes/NavBar/NavBar";
 import ItemListContainer from "../../containers/ItemListContainer/ItemListContainer";
 import {
     BrowserRouter,
@@ -13,9 +13,9 @@ export default function Router (){
 
     <Routes>
 
-    <Route path='/' element={<ItemListContainer />}></Route>
-    <Route path='/category/:id' element={<ItemListContainer />}></Route>
-    <Route path='/item/:id' element={<ItemListContainer />}></Route>
+    <Route to='/' element={<ItemListContainer />}></Route>
+    <Route to='/category/:id' element={<ItemListContainer />}></Route>
+    <Route to='/item/:id' element={<ItemListContainer />}></Route>
     </Routes> 
     </BrowserRouter>
     )

@@ -1,8 +1,7 @@
 import React from 'react';
-import Navbar from './componentes/NavBar/NavBar';
-import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
+import ItemListContainer from '../containers/ItemListContainer/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Router from 'Router'
+import Router from './Router/Router'
 
 
 const App = () => {
