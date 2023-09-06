@@ -14,7 +14,7 @@ export default function Item ({ product }) {
                     <Card.Title>{product.title}</Card.Title>
                     <Card.Text>{product.id}</Card.Text>
                     <Card.Text>${product.price}</Card.Text>
-                    <Link className="btn btn-danger">Buy</Link>
+                    <Link to='/' className="btn btn-danger">Buy</Link>
                 </Card.Body>
             </Card>
             </Row>

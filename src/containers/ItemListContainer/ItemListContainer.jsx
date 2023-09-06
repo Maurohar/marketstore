@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import Item from '../../componentes/Item/Item';
+import React, { useEffect, useState } from 'react'
+import Item from '../../componentes/Item/Item'
 
 function ItemListContainer(props) {
     const [products, setProducts] = useState([]);

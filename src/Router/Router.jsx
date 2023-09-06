@@ -1,5 +1,5 @@
 import NavBar from "../componentes/NavBar/NavBar";
-import ItemListContainer from "../../containers/ItemListContainer/ItemListContainer";
+import ItemListContainer from "../containers/ItemListContainer/ItemListContainer";
 import {
     BrowserRouter,
     Routes,
