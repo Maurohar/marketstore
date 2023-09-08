@@ -1,7 +1,10 @@
+import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+
+/*Luego que creamos nuestro componente Routes, con sus respectivas rutas, debemos injertar Link de react router dom las rutas ya definidas.*/
 
 function NavBar() {
     return (
@@ -10,11 +13,11 @@ function NavBar() {
                 <Container>
                     <Navbar.Brand to='/home'>myEcommerce</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link to='/category'>Category</Nav.Link>
-                        <Nav.Link to='/jewelery'>Jewelery</Nav.Link>
-                        <Nav.Link to='/electronics'>electronics</Nav.Link>
-                        <Nav.Link to='/menclothing'>men's clothing</Nav.Link>
-                        <Nav.Link to='/womenclothing'>women's clothing</Nav.Link>
+                        <Link to='/category'>Category</Link>
+                        <Link to='/jewelery'>Jewelery</Link>
+                        <Link to='/electronics'>electronics</Link>
+                        <Link to='/menclothing'>men's clothing</Link>
+                        <Link to='/womenclothing'>women's clothing</Link>
                     </Nav>
                     <CartWidget />
                 </Container>

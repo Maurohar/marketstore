@@ -1,5 +1,4 @@
 import React from 'react';
-import ItemListContainer from '../containers/ItemListContainer/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Router from './Router/Router'
 
@@ -15,12 +14,6 @@ const App = () => {
 
         </header>
 
-        <main>
-        <> 
-        <ItemListContainer />
-        </>
-
-        </main>
     </div>
   );
 }
