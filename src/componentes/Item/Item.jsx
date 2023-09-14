@@ -4,7 +4,7 @@ import { Card ,Container , Row } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetail from '../ItemDetail/ItemDetail';
 
-export default function Item ({ product }) {
+export default function Item ({ product, actualizarCarrito }) {
     return (
         <Container className="Itemcontainer">
             <Row>
@@ -15,7 +15,7 @@ export default function Item ({ product }) {
                     <Card.Title>{product.title}</Card.Title>
                     <Card.Text>{product.id}</Card.Text>
                     <Card.Text>${product.price}</Card.Text>
-                    <Link to={ItemDetail} className="btn btn-danger">Buy</Link>
+                    <Link to={`/item/${product.id}`} className="btn btn-danger">Buy</Link>
                 </Card.Body>
             </Card>
             </Row>

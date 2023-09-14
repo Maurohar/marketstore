@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount';
 
-function ItemDetail() {
+function ItemDetail({actualizarCarrito}) {
     const [products, setProducts] = useState([]);
     const { id } = useParams();
 
@@ -44,12 +45,14 @@ function ItemDetail() {
                             <p>Category: {product.category}</p>
                             <p>Price: ${product.price}</p>
                             <p>Description: {product.description}</p>
+                            <button onClick={() => actualizarCarrito(product)}>Comprar</button>
                         </li>
                     ))}
                 </ul>
             ) : (
                 <p>lorem</p>
-            )}
+                )}
+            <ItemCount />
         </div>
     );
 }

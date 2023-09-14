@@ -6,9 +6,9 @@ import Navbar from 'react-bootstrap/Navbar';
 
 /*Luego que creamos nuestro componente Routes, con sus respectivas rutas, debemos injertar Link de react router dom las rutas ya definidas.*/
 
-function NavBar() {
+function NavBar({cart}) {
     return (
-        <>
+        <header>
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
                     <Navbar.Brand to='/home'>myEcommerce</Navbar.Brand>
@@ -16,13 +16,13 @@ function NavBar() {
                         <Link to='/category'>Category</Link>
                         <Link to='/jewelery'>Jewelery</Link>
                         <Link to='/electronics'>electronics</Link>
-                        <Link to='/menclothing'>men's clothing</Link>
-                        <Link to='/womenclothing'>women's clothing</Link>
+                        <Link to="/men's clothing">men's clothing</Link>
+                        <Link to="/women's clothing">women's clothing</Link>
                     </Nav>
-                    <CartWidget />
+                    <CartWidget cart={cart} />
                 </Container>
             </Navbar>
-        </>
+        </header>
     );
 }
 

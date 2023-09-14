@@ -4,16 +4,9 @@ import Router from './Router/Router'
 
 
 const App = () => {
-
     return (    
     <div className="container-principal">
-        <header>
-        <> 
-        <Router />
-        </>
-
-        </header>
-
+      <Router />
     </div>
   );
 }
