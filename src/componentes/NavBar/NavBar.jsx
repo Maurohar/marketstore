@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 /*Luego que creamos nuestro componente Routes, con sus respectivas rutas, debemos injertar Link de react router dom las rutas ya definidas.*/
 
-function NavBar({cart}) {
+function NavBar({}) {
     return (
         <header>
             <Navbar bg="dark" data-bs-theme="dark">
@@ -19,7 +19,7 @@ function NavBar({cart}) {
                         <Link to="/men's clothing">men's clothing</Link>
                         <Link to="/women's clothing">women's clothing</Link>
                     </Nav>
-                    <CartWidget cart={cart} />
+                    <CartWidget />
                 </Container>
             </Navbar>
         </header>
