@@ -4,20 +4,18 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-/*Luego que creamos nuestro componente Routes, con sus respectivas rutas, debemos injertar Link de react router dom las rutas ya definidas.*/
-
-function NavBar({}) {
+function NavBar() {
     return (
         <header>
             <Navbar bg="dark" data-bs-theme="dark">
-                <Container>
+                <Container className='container'>
                     <Navbar.Brand to='/home'>myEcommerce</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Link to='/category'>Category</Link>
-                        <Link to='/jewelery'>Jewelery</Link>
+                        <Link to='/jewelery'>Jewelry</Link>
                         <Link to='/electronics'>electronics</Link>
                         <Link to="/men's clothing">men's clothing</Link>
                         <Link to="/women's clothing">women's clothing</Link>
+                        <Link to="/registrarse">Registrarse</Link>
                     </Nav>
                     <CartWidget />
                 </Container>

@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import React from 'react';
 import { Card ,Container , Row } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemDetail from '../ItemDetail/ItemDetail';
 
 export default function Item ({ product, actualizarCarrito }) {
     return (

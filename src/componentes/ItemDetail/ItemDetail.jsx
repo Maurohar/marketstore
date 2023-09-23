@@ -1,57 +1,51 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
+import { doc , getDocs, getDoc } from 'firebase/firestore';
+import { db } from '../../firebase/client'
 
-function ItemDetail({actualizarCarrito}) {
-    const [products, setProducts] = useState([]);
+
+function ItemDetail({ actualizarCarrito }) {
+    const [product, setProduct] = useState(null);
     const { id } = useParams();
+    
+    const getProduct = async () => {
+        try {
+            const docRef = doc(db, 'products', id); 
+            const docSnap = await getDoc(docRef);
+    
+            if (docSnap.exists()) {
+                setProduct(docSnap.data());
+            } else {
+                console.error('Product not found');
+            }
+        } catch (error) {
+            console.error('Error fetching product data:', error);
+        }
+    };
 
     useEffect(() => {
-        const getProducts = async () => {
-            try {
-                const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-                const data = await response.json();
-                setProducts([data]);
-            } catch (error) {
-                console.error('Error fetching product data:', error);
-            }
-        };
-
+        
         if (id) {
-            getProducts();
-        } else {
-            const fetchAllProducts = async () => {
-                try {
-                    const response = await fetch('https://fakestoreapi.com/products?limit=20');
-                    const data = await response.json();
-                    setProducts(data);
-                } catch (error) {
-                    console.error('Error fetching data:', error);
-                }
-            };
-
-            fetchAllProducts();
+            getProduct();
         }
+        console.log(product)
     }, [id]);
-
+    
     return (
         <div>
-            <h2>Product Details</h2>
-            {products.length > 0 ? (
-                <ul>
-                    {products.map((product) => (
-                        <li key={product.id}>
-                            <h3>{product.title}</h3>
-                            <p>Category: {product.category}</p>
-                            <p>Price: ${product.price}</p>
-                            <p>Description: {product.description}</p>
-                            <button onClick={() => actualizarCarrito(product)}>Comprar</button>
-                        </li>
-                    ))}
-                </ul>
+            <h2>Detalles del Producto</h2>
+            {product ? (
+                <div>
+                    <h3>{product.title}</h3>
+                    <p>Categoría: {product.category}</p>
+                    <p>Precio: ${product.price}</p>
+                    <p>Descripción: {product.description}</p>
+                    <button onClick={() => actualizarCarrito(product)}>Comprar</button>
+                </div>
             ) : (
-                <p>lorem</p>
-                )}
+                <p>Producto no encontrado</p>
+            )}
             <ItemCount />
         </div>
     );
